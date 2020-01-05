@@ -27,7 +27,9 @@ using namespace std;
 #define pll pair< ll,ll >
 #define vpll vector< pll >
 #define qll queue<ll>
+#define dqll deque<ll>
 #define qpll queue<pll>
+#define dqpll deque<pll>
 #define pqll priority_queue<ll>
 #define pqpll priority_queue<pll>
 #define Line cout<<"\n**************************\n\n";
@@ -47,25 +49,11 @@ const ld pie = 3.1415926535;
 ll fpow(ll n,ll p){;ll m=1;while(p){if(p%2)m*=n;p>>=1;n*=n;}return m;}
 ll mfpow(ll n,ll p,ll M){ll m=1;n%=M;while(p){if(p%2)m=(m*n)%M;n=(n*n)%M;p>>=1;}return m%M;}
  
-/************************** COMP UTIL *****************************/
-
-ll min(){ return MAX_LL;}
-ll min(ll a){ return a; }
-ll min(ll a,ll b){if(a < b)return a;else return b;}
-template<typename ... Args>
-ll min(ll a, ll b, Args ... args){if(a < b)return min(a,args...);else return min(b,args...);}
-
-
-ll max(){ return MIN_LL;}
-ll max(ll a){ return a; }
-ll max(ll a,ll b){if(a < b)return b;else return a;}
-template<typename ... Args>
-ll max(ll a, ll b, Args ... args){if(a < b)return max(b,args...);else return max(a,args...);}
-
 /************************* PRINT UTIL *****************************/
 
 template<class T> inline ostream& operator<<(ostream& o,vector<T> v){for(auto i:v)o<<i<<" ";return o;};
 template<class T> inline ostream& operator<<(ostream& o,set<T> s){for(auto i:s)o<<i<<" ";return o;}
+template<class T> inline ostream& operator<<(ostream& o,multiset<T> s){for(auto i:s)cout<<i<<" ";return o;}
 template<class T1,class T2> inline ostream& operator<<(ostream& o,pair<T1,T2> p){o<<p.F<<" "<<p.S<<"\n";return o;}
 template<class T1,class T2> inline ostream& operator<<(ostream& o,map<T1,T2> m){for(auto p:m)o<<p.F<<" "<<p.S<<"\n";return o;}
 
@@ -73,18 +61,18 @@ template<class T1,class T2> inline ostream& operator<<(ostream& o,map<T1,T2> m){
 
 const vll days={31,28,31,30,31,30,31,31,30,31,30,31};
  
-bool br,br1,br2;
- 
+bool br,br1,br2; 
 char ch,ch1,ch2;
  
-ll n,m,k,x,y,z,mini,maxi,l,r,sum,t,w;
 
+ll n,m,k,x,y,z,mini,maxi,l,r,sum,t,w;
 pll p,p1,p2;
- 
+
 string s,s1,s2;
 
 set<ll> st,st1,st2;
- 
+multiset<ll> mst; 
+
 map<ll,ll> mp;
 
 /**************************** FXNS ****************************/
